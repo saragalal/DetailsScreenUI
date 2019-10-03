@@ -23,7 +23,23 @@ class ViewController: UIViewController {
         collectionView.register(UINib(nibName:"CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: cellIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+         let shareButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem(rawValue: 11)!, target: self, action: #selector(menuOpen))
+        shareButton.tintColor = UIColor.white
+        let bookmarkButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem(rawValue: 10)!, target: self, action: #selector(menuOpen))
+        bookmarkButton.tintColor = UIColor.white
+        let editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem(rawValue: 7)!, target: self, action: #selector(menuOpen))
+        editButton.tintColor = UIColor.white
+        navigationItem.leftBarButtonItems = [shareButton, bookmarkButton, editButton]
+        let titleLabel = UILabel(frame: CGRect(x: (self.navigationController?.navigationBar.frame.width)! - (self.navigationController?.navigationBar.frame.width)!/4, y: 0, width: (self.navigationController?.navigationBar.frame.width)!/4, height: (self.navigationController?.navigationBar.frame.height)!))
+        titleLabel.text = "المملكة"
+        titleLabel.textColor = UIColor.hexStringToUIColor(hex: "359BFF")
+        self.navigationController?.navigationBar.addSubview(titleLabel)
     }
+    
+    @objc func menuOpen(button: UIButton) {
+        // Handle menu button event here...
+    }
+    
 
     @IBAction func moreInfoButton(_ sender: Any) {
         print("تابع الموضوع")
