@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         let editButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem(rawValue: 7)!, target: self, action: #selector(menuOpen))
         editButton.tintColor = UIColor.white
         navigationItem.leftBarButtonItems = [shareButton, bookmarkButton, editButton]
-        let titleLabel = UILabel(frame: CGRect(x: (self.navigationController?.navigationBar.frame.width)! - (self.navigationController?.navigationBar.frame.width)!/4, y: 0, width: (self.navigationController?.navigationBar.frame.width)!/4, height: (self.navigationController?.navigationBar.frame.height)!))
-        titleLabel.text = "المملكة"
-        titleLabel.textColor = UIColor.hexStringToUIColor(hex: "359BFF")
-        self.navigationController?.navigationBar.addSubview(titleLabel)
+//        let titleLabel = UILabel(frame: CGRect(x: (self.navigationController?.navigationBar.frame.width)! - (self.navigationController?.navigationBar.frame.width)!/4, y: 0, width: (self.navigationController?.navigationBar.frame.width)!/4, height: (self.navigationController?.navigationBar.frame.height)!))
+//        titleLabel.text = "المملكة"
+//        titleLabel.textColor = UIColor.hexStringToUIColor(hex: "359BFF")
+//        self.navigationController?.navigationBar.addSubview(titleLabel)
     }
     
     @objc func menuOpen(button: UIButton) {
@@ -58,6 +58,11 @@ extension ViewController: UICollectionViewDelegate , UICollectionViewDataSource 
         return cell
         }
         fatalError()
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell{
+            cell.viewImages(cell: indexPath.row)
+        }
     }
 }
 extension ViewController: UICollectionViewDelegateFlowLayout {

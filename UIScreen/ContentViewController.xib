@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContentViewController" customModule="UIScreen" customModuleProvider="target">
+            <connections>
+                <outlet property="imgView" destination="LNN-KZ-DhF" id="gnj-Xu-G9O"/>
+                <outlet property="labelTitle" destination="dCJ-aU-9rb" id="mxS-e4-n6S"/>
+                <outlet property="scrollView" destination="efY-PI-GY6" id="lAC-oD-i80"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efY-PI-GY6">
+                    <rect key="frame" x="15" y="70" width="345" height="486"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-KZ-DhF">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="467"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="zFK-BL-F2p" appends="YES" id="cPI-pn-kQX"/>
+                            </connections>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="LNN-KZ-DhF" secondAttribute="bottom" id="CUo-IN-J1H"/>
+                        <constraint firstItem="LNN-KZ-DhF" firstAttribute="leading" secondItem="efY-PI-GY6" secondAttribute="leading" id="SIH-ws-8gz"/>
+                        <constraint firstItem="LNN-KZ-DhF" firstAttribute="top" secondItem="efY-PI-GY6" secondAttribute="top" id="WuV-aD-FMF"/>
+                        <constraint firstItem="LNN-KZ-DhF" firstAttribute="centerX" secondItem="efY-PI-GY6" secondAttribute="centerX" id="bRS-cm-ogw"/>
+                        <constraint firstAttribute="trailing" secondItem="LNN-KZ-DhF" secondAttribute="trailing" id="hMT-EJ-ZFI"/>
+                    </constraints>
+                </scrollView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCJ-aU-9rb">
+                    <rect key="frame" x="15" y="576" width="345" height="61"/>
+                    <string key="text">Label
+kn
+km</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="efY-PI-GY6" secondAttribute="trailing" constant="15" id="1nE-zk-P5I"/>
+                <constraint firstItem="efY-PI-GY6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="31n-uI-Nqa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="dCJ-aU-9rb" secondAttribute="bottom" constant="30" id="H7v-Ol-mbh"/>
+                <constraint firstItem="efY-PI-GY6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="RJ3-6a-ojo"/>
+                <constraint firstItem="dCJ-aU-9rb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="SDa-SM-sZx"/>
+                <constraint firstItem="LNN-KZ-DhF" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="Su3-y5-tLm"/>
+                <constraint firstItem="dCJ-aU-9rb" firstAttribute="top" secondItem="efY-PI-GY6" secondAttribute="bottom" constant="20" id="sof-QS-thA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dCJ-aU-9rb" secondAttribute="trailing" constant="15" id="uT4-4Q-Qxm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="107.49625187406298"/>
+        </view>
+        <pinchGestureRecognizer id="zFK-BL-F2p">
+            <connections>
+                <action selector="pinchHandler:" destination="-1" id="NL4-Xn-tNg"/>
+            </connections>
+        </pinchGestureRecognizer>
+    </objects>
+</document>
